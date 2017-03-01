@@ -12,37 +12,24 @@ public partial class wenjuan : System.Web.UI.Page
     {
 
     }
-
-    protected void Button1_Click(object sender, EventArgs e)
-    {
-        SqlConnection con = Signin();
-        con.Open();
-        string task = "insert into test values (3)";
-        SqlCommand mycom = new SqlCommand(task, con);
-        mycom.ExecuteNonQuery();
-        con.Close();
-        Response.Write("dsddsds");
-    }
     public static SqlConnection Signin()
     {
         string Sqlst = "Server=bds240792229.my3w.com;User Id=bds240792229;Pwd=961016728;Database=bds240792229_db";
         return new SqlConnection(Sqlst);
-    }
-
-    protected void Button2_Click(object sender, EventArgs e)
-    {
-        Response.Write(Request["grade"].ToString());
-    }
+    }//封装远程数据库账号密码，返回连接对象
     protected void Button1_Click1(object sender, EventArgs e)
     {
-        object obj = Request.Form["grade"];
-        Response.Write(Request["grade"]);
+        Response.Write(CheckedCheckBox("q35"));
     }
-}
-public partial class wenjuan
-{
-    public wenjuan()
+    public int CheckedCheckBox(string name)
     {
-
-    }
+        int sum = 0;
+        string result = Request.Form[name];
+        string[] arr_value = result.Split(',');
+        foreach(string st_value in arr_value)
+        {
+            sum += Convert.ToInt32(st_value);
+        }
+        return sum;
+    }//输入多选名称，返回代表答案的二进制int类
 }
