@@ -19,7 +19,7 @@
           <!-- Select Basic -->
           <label class="control-label" for="input01">年级：</label>
           <div class="controls">
-            <select class="input-xlarge" name="grade">
+            <select class="input-xlarge" name="q-2">
       <option>大一</option>
       <option>大二</option>
       <option>大三</option>
@@ -31,7 +31,7 @@
           <!-- Text input-->
           <label class="control-label" for="input01">专业：</label>
           <div class="controls">
-            <input placeholder="填写专业" class="input-xlarge" type="text" name="major"/>
+            <input placeholder="填写专业" class="input-xlarge" type="text" name="q-1"/>
             <p class="help-block"></p>
           </div>
         </div><div class="control-group">
@@ -39,7 +39,7 @@
           <!-- Select Basic -->
           <label class="control-label">性别：</label>
           <div class="controls">
-            <select class="input-xlarge" name="sex">
+            <select class="input-xlarge" name="q0">
       <option>男</option>
       <option>女</option></select>
           </div>
@@ -966,8 +966,7 @@
     
           <!-- Button -->
           <div class="controls">
-            <button class="btn btn-success">提交</button>
-              <asp:Button ID="Button1" runat="server" OnClick="Button1_Click1" Text="Button" />
+              <asp:Button class="btn btn-success" ID="submit" runat="server" OnClick="submit_Click" Text="提交" />
           </div>
 
     
