@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 9.5" name="LinkDB">
+  <DataContextMoniker Name="/LinkDBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="4a5e35c6-45e1-4427-b462-ea97bc2b0b83" absoluteBounds="2.125, 0.75, 2, 8.4482548014322916">
+      <DataClassMoniker Name="/LinkDBDataContext/dachuang" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a888f006-e684-4f3a-b4eb-09f58e55ae44" absoluteBounds="2.14, 1.21, 1.9700000000000002, 7.888254801432292" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

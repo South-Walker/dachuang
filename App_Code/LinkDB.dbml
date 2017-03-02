@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="bds240792229_db" Class="LinkDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=bds240792229.my3w.com;Initial Catalog=bds240792229_db;Persist Security Info=True;User ID=bds240792229" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="bds240792229_dbConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.dachuang" Member="dachuang">
+    <Type Name="dachuang">
+      <Column Name="mainID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="grade" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="major" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="sex" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="q1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="q2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="q3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="q4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="q5" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="q6" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="q7" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="q8" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="q9" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="q10" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="q11" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="q12" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="q13" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="q14" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="q15" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="q16" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="q17" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="q18" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="q19" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="q20" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="q21" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="q22" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="q23" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="q24" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="q25" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="q26" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="q27" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="q28" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="q29" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="q30" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="q31" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="q32" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="q33" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="q34" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="q35" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
