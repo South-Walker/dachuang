@@ -48,7 +48,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 			<!--logo and iconic logo start-->
 			<div class="logo">
-				<h1><a href="index.html">Easy <span>Admin</span></a></h1>
+				<h1><a href="index.aspx">返回 <span>首页</span></a></h1>
 			</div>
 			<div class="logo-icon text-center">
 				<a href="index.html"><i class="lnr lnr-home"></i> </a>
@@ -59,7 +59,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 				<!--sidebar nav start-->
 					<ul class="nav nav-pills nav-stacked custom-nav">
-						<li><a href="index.html"><i class="lnr lnr-power-switch"></i><span>Dashboard</span></a></li>
+						<li class="active"><a href="index.html"><i class="lnr lnr-power-switch"></i><span>Dashboard</span></a></li>
 						<li class="menu-list">
 							<a href="#"><i class="lnr lnr-cog"></i>
 								<span>Components</span></a>
@@ -69,13 +69,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</ul>
 						</li>
 						<li><a href="forms.html"><i class="lnr lnr-spell-check"></i> <span>Forms</span></a></li>
-						<li class="active"><a href="tables.html"><i class="lnr lnr-menu"></i> <span>Tables</span></a></li>              
+						<li><a href="tables2.aspx"><i class="lnr lnr-menu"></i> <span>查看问卷</span></a></li>              
 						<li class="menu-list"><a href="#"><i class="lnr lnr-envelope"></i> <span>MailBox</span></a>
 							<ul class="sub-menu-list">
 								<li><a href="inbox.html">Inbox</a> </li>
 								<li><a href="compose-mail.html">Compose Mail</a></li>
 							</ul>
-						</li>  
+						</li>      
 						<li class="menu-list"><a href="#"><i class="lnr lnr-indent-increase"></i> <span>Menu Levels</span></a>  
 							<ul class="sub-menu-list">
 								<li><a href="charts.html">Basic Charts</a> </li>
@@ -94,8 +94,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<!--sidebar nav end-->
 			</div>
 		</div>
-    <!-- left side end-->
-    
+		<!-- left side end-->
     <!-- main content start-->
 		<div class="main-content main-content4">
 			<!-- header-starts -->
@@ -1578,6 +1577,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							      </table>
 							    </td>
 							</tr>
+                              <tr>
+                                  <td></td>
+                                  <td>问卷到此结束，谢谢您的配合</td>
+                              </tr>
 						  </tbody>
 						</table>
 					   </div>
