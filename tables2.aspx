@@ -316,22 +316,36 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<tr>
 							  <th>&nbsp;</th>
 							  <td>
-
-&nbsp;&nbsp;
+                                  
                                   <table class="auto-style7"><tr><td class="auto-style9">
-
-<asp:Label ID="Label1" runat="server" Font-Size="Medium" Text="年级："></asp:Label>
-          <select class="input-xlarge" name="q-2">
+                                      <div class="form-group">
+                                          <label for="name">年级：</label>
+          <select class="form-control" name="q-2">
       <option>大一</option>
       <option>大二</option>
       <option>大三</option>
-      <option>以上</option></select></td><td class="auto-style9">
-<asp:Label ID="Label2" runat="server" Font-Size="Medium" Text="专业："></asp:Label>
-          <input placeholder="填写专业" class="input-xlarge" type="text" name="q-1"/></td><td class="auto-style9">
- <asp:Label ID="Label3" runat="server" Font-Size="Medium" Text="性别："></asp:Label>
-      <select class="input-xlarge" name="q0">
+      <option>以上</option></select>
+                                      </div>                 
+                                  </td>
+                                      <td class="auto-style9">
+                                    
+                                          <div class="form-group">
+                                              <label for="name">专业：</label>
+                                              <input placeholder="填写专业" class="form-control" type="text" name="q-1"/>
+                                          </div>
+
+                                      </td><td>
+              
+                            <div class="form-group">
+    <label for="name">性别：</label>
+      <select class="form-control" name="q0">
       <option>男</option>
-      <option>女</option></select></td><td class="auto-style5"></td></tr></table></td>
+      <option>女</option></select>
+                                </div>
+
+                                                                                      </td><td class="auto-style5"></td></tr></table>
+
+							  </td>
 							</tr>
 						  </thead>
 						  <tbody>
@@ -389,27 +403,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                           <td>
                                               <input name="q2" type="checkbox" value="1" /> A.查阅学习资料</td>
                                           <td>
-                                              <input name="q3" type="checkbox" value="2" /> B.购书或下载电子书</td>
+                                              <input name="q2" type="checkbox" value="2" /> B.购书或下载电子书</td>
                                           <td>
-                                              <input name="q4" type="checkbox" value="4" /> C.阅读新闻</td>
+                                              <input name="q2" type="checkbox" value="4" /> C.阅读新闻</td>
                                           <td>
-                                              <input name="q5" type="checkbox" value="8" /> D.问卷没有</td>
+                                              <input name="q2" type="checkbox" value="8" /> D.问卷没有</td>
                                           <td>
-                                              <input name="q6" type="checkbox" value="16" /> E.看网络小说</td>
+                                              <input name="q2" type="checkbox" value="16" /> E.看网络小说</td>
                                           <td>
-                                              <input name="q7" type="checkbox" value="32" /> F.看视频、听音乐</td>
+                                              <input name="q2" type="checkbox" value="32" /> F.看视频、听音乐</td>
                                       </tr>
                                       <tr>
                                           <td>
-                                              <input name="q8" type="checkbox" value="64" /> G.社交聊天</td>
+                                              <input name="q2" type="checkbox" value="64" /> G.社交聊天</td>
                                           <td>
-                                              <input name="q9" type="checkbox" value="128" /> H.网上冲浪</td>
+                                              <input name="q2" type="checkbox" value="128" /> H.网上冲浪</td>
                                           <td>
-                                              <input name="q10" type="checkbox" value="256" /> I.网络游戏</td>
+                                              <input name="q2" type="checkbox" value="256" /> I.网络游戏</td>
                                           <td>
-                                              <input name="q11" type="checkbox" value="512" /> J.购物</td>
+                                              <input name="q2" type="checkbox" value="512" /> J.购物</td>
                                           <td>
-                                              <input name="q12" type="checkbox" value="1024" /> K.其他</td>
+                                              <input name="q2" type="checkbox" value="1024" /> K.其他</td>
                                           <td></td>
                                       </tr>
 							      </table>
@@ -431,33 +445,33 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                       <tr>
                                           <td class="auto-style5">
 
-                                              <input name="q13" type="checkbox" value="1" /> A.打电话，发短信</td>
+                                              <input name="q3" type="checkbox" value="1" /> A.打电话，发短信</td>
                                           <td class="auto-style5">
 
-                                              <input name="q14" type="checkbox" value="2" /> B.搜索和学习有关的信息</td>
+                                              <input name="q3" type="checkbox" value="2" /> B.搜索和学习有关的信息</td>
                                           <td class="auto-style5">
 
-                                              <input name="q15" type="checkbox" value="4" /> C.浏览网站，看新闻</td>
+                                              <input name="q3" type="checkbox" value="4" /> C.浏览网站，看新闻</td>
                                           <td class="auto-style5">
 
-                                              <input name="q16" type="checkbox" value="8" /> D.阅读小说</td>
+                                              <input name="q3" type="checkbox" value="8" /> D.阅读小说</td>
                                           <td class="auto-style5">
 
-                                              <input name="q17" type="checkbox" value="16" /> E.刷微博</td>
+                                              <input name="q3" type="checkbox" value="16" /> E.刷微博</td>
                                       </tr>
                                       <tr>
                                           <td class="auto-style5">
 
-                                              <input name="q18" type="checkbox" value="32" /> F.打游戏</td>
+                                              <input name="q3" type="checkbox" value="32" /> F.打游戏</td>
                                           <td class="auto-style5">
 
-                                              <input name="q19" type="checkbox" value="64" /> G.听音乐，看视频</td>
+                                              <input name="q3" type="checkbox" value="64" /> G.听音乐，看视频</td>
                                           <td class="auto-style5">
 
-                                              <input name="q20" type="checkbox" value="128" /> H.上微信，QQ</td>
+                                              <input name="q3" type="checkbox" value="128" /> H.上微信，QQ</td>
                                           <td class="auto-style5">
 
-                                              <input name="q21" type="checkbox" value="256" /> I.其他</td>
+                                              <input name="q3" type="checkbox" value="256" /> I.其他</td>
                                           <td class="auto-style5">
 
                                           </td>
@@ -480,13 +494,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                       <tr>
                                           <td class="auto-style5">
 
-                                              <input name="q22" type="checkbox" value="1" /> A.手机app</td>
+                                              <input name="q4" type="checkbox" value="1" /> A.手机app</td>
                                           <td class="auto-style5">
 
-                                              <input name="q23" type="checkbox" value="2" /> B.微信公众号</td>
+                                              <input name="q4" type="checkbox" value="2" /> B.微信公众号</td>
                                           <td class="auto-style5">
 
-                                              <input name="q24" type="checkbox" value="4" /> C.电子书</td>
+                                              <input name="q4" type="checkbox" value="4" /> C.电子书</td>
                                           <td class="auto-style5">
 
                                           </td>
@@ -497,13 +511,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                       <tr>
                                           <td class="auto-style5">
 
-                                              <input name="q25" type="checkbox" value="8" /> D.网站</td>
+                                              <input name="q4" type="checkbox" value="8" /> D.网站</td>
                                           <td class="auto-style5">
 
-                                              <input name="q26" type="checkbox" value="16" /> E.纸质书</td>
+                                              <input name="q4" type="checkbox" value="16" /> E.纸质书</td>
                                           <td class="auto-style5">
 
-                                              <input name="q27" type="checkbox" value="32" /> F.其他</td>
+                                              <input name="q4" type="checkbox" value="32" /> F.其他</td>
                                           <td class="auto-style5">
 
                                           </td>
@@ -529,16 +543,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                       <tr>
                                           <td class="auto-style5">
 
-                                              <input name="q28" type="checkbox" value="1" /> A.图书</td>
+                                              <input name="q5" type="checkbox" value="1" /> A.图书</td>
                                           <td class="auto-style5">
 
-                                              <input name="q29" type="checkbox" value="2" /> B.期刊</td>
+                                              <input name="q5" type="checkbox" value="2" /> B.期刊</td>
                                           <td class="auto-style5">
 
-                                              <input name="q30" type="checkbox" value="4" /> C.报纸</td>
+                                              <input name="q5" type="checkbox" value="4" /> C.报纸</td>
                                           <td class="auto-style5">
 
-                                              <input name="q31" type="checkbox" value="8" /> D.网络新闻</td>
+                                              <input name="q5" type="checkbox" value="8" /> D.网络新闻</td>
                                           <td class="auto-style5">
 
                                           </td>
@@ -546,10 +560,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                       <tr>
                                           <td class="auto-style5">
 
-                                              <input name="q32" type="checkbox" value="16" /> E.杂志</td>
+                                              <input name="q5" type="checkbox" value="16" /> E.杂志</td>
                                           <td class="auto-style5">
 
-                                              <input name="q33" type="checkbox" value="32" /> F.教辅资料</td>
+                                              <input name="q5" type="checkbox" value="32" /> F.教辅资料</td>
                                           <td class="auto-style5">
 
                                           </td>
@@ -625,8 +639,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                                               <input name="q7" type="radio" value="8" /> D.一日3~5次</td>
                                       </tr>
-							      </table>
+                                      <tr>
+                                          <td class="auto-style5">
+                                              <input name="q7" type="radio" value="16" /> E.5次以上</td>
+                                          <td class="auto-style5">
 
+                                              &nbsp;</td>
+                                          <td class="auto-style5">
+
+                                              &nbsp;</td>
+                                          <td class="auto-style2"></td>
+                                      </tr>
+							      </table>
+                                     
                                 </td>
 							</tr>
 
@@ -673,33 +698,33 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                       <tr>
                                           <td class="auto-style5">
 
-                                              <input name="q34" type="checkbox" value="1" /> A.经典文学</td>
+                                              <input name="q9" type="checkbox" value="1" /> A.经典文学</td>
                                           <td class="auto-style5">
 
-                                              <input name="q35" type="checkbox" value="2" /> B.人物传记</td>
+                                              <input name="q9" type="checkbox" value="2" /> B.人物传记</td>
                                           <td class="auto-style5">
 
-                                              <input name="q36" type="checkbox" value="4" /> C.武侠言情</td>
+                                              <input name="q9" type="checkbox" value="4" /> C.武侠言情</td>
                                           <td class="auto-style5">
 
-                                              <input name="q37" type="checkbox" value="8" /> D.科幻</td>
+                                              <input name="q9" type="checkbox" value="8" /> D.科幻</td>
                                           <td class="auto-style5">
 
-                                              <input name="q38" type="checkbox" value="16" /> E.动漫</td>
+                                              <input name="q9" type="checkbox" value="16" /> E.动漫</td>
                                       </tr>
                                       <tr>
                                           <td class="auto-style5">
 
-                                              <input name="q39" type="checkbox" value="32" /> F.娱乐八卦</td>
+                                              <input name="q9" type="checkbox" value="32" /> F.娱乐八卦</td>
                                           <td class="auto-style5">
 
-                                              <input name="q40" type="checkbox" value="64" /> G.军事体育</td>
+                                              <input name="q9" type="checkbox" value="64" /> G.军事体育</td>
                                           <td class="auto-style5">
 
-                                              <input name="q41" type="checkbox" value="128" /> H.时事政治</td>
+                                              <input name="q9" type="checkbox" value="128" /> H.时事政治</td>
                                           <td class="auto-style5">
 
-                                              <input name="q42" type="checkbox" value="256" /> I.其他</td>
+                                              <input name="q9" type="checkbox" value="256" /> I.其他</td>
                                           <td class="auto-style5">
 
                                           </td>
@@ -722,27 +747,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                       <tr>
                                           <td class="auto-style5">
 
-                                              <input name="q43" type="checkbox" value="1" /> A.图书馆推荐</td>
+                                              <input name="q10" type="checkbox" value="1" /> A.图书馆推荐</td>
                                           <td class="auto-style5">
 
-                                              <input name="q44" type="checkbox" value="2" /> B.老师推荐</td>
+                                              <input name="q10" type="checkbox" value="2" /> B.老师推荐</td>
                                           <td class="auto-style5">
 
-                                              <input name="q45" type="checkbox" value="4" /> C.社交网络分享</td>
+                                              <input name="q10" type="checkbox" value="4" /> C.社交网络分享</td>
                                           <td class="auto-style2">
 
-                                              <input name="q46" type="checkbox" value="8" /> D.同学之间交流分享</td>
+                                              <input name="q10" type="checkbox" value="8" /> D.同学之间交流分享</td>
                                       </tr>
                                       <tr>
                                           <td class="auto-style5">
 
-                                              <input name="q47" type="checkbox" value="16" /> E.电视剧或电影</td>
+                                              <input name="q10" type="checkbox" value="16" /> E.电视剧或电影</td>
                                           <td class="auto-style5">
 
-                                              <input name="q48" type="checkbox" value="32" /> F.没有标准，随意</td>
+                                              <input name="q10" type="checkbox" value="32" /> F.没有标准，随意</td>
                                           <td class="auto-style5">
 
-                                              <input name="q49" type="checkbox" value="64" /> G.其他</td>
+                                              <input name="q10" type="checkbox" value="64" /> G.其他</td>
                                           <td class="auto-style2">
 
                                               &nbsp;</td>
@@ -765,19 +790,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                       <tr>
                                           <td class="auto-style5">
 
-                                              <input name="q54" type="checkbox" value="1" /> A.完善自我，提高能力和素质的内在要求</td>
+                                              <input name="q11" type="checkbox" value="1" /> A.完善自我，提高能力和素质的内在要求</td>
                                           <td class="auto-style5">
 
-                                              <input name="q53" type="checkbox" value="2" /> B.大众文化在中国的兴起和传播，流行时尚的驱使</td>
+                                              <input name="q11" type="checkbox" value="2" /> B.大众文化在中国的兴起和传播，流行时尚的驱使</td>
                                           <td class="auto-style5">
 
-                                              <input name="q52" type="checkbox" value="4" /> C.传播媒介和网络的大发展，应对信息化的发展需要</td>
+                                              <input name="q11" type="checkbox" value="4" /> C.传播媒介和网络的大发展，应对信息化的发展需要</td>
                                           <td class="auto-style5">
 
-                                              <input name="q51" type="checkbox" value="8" /> D.提高外语水平，了解外国文化</td>
+                                              <input name="q11" type="checkbox" value="8" /> D.提高外语水平，了解外国文化</td>
                                           <td class="auto-style5">
 
-                                              <input name="q50" type="checkbox" value="16" /> E.缓解精神压力，平衡情感需求</td>
+                                              <input name="q11" type="checkbox" value="16" /> E.缓解精神压力，平衡情感需求</td>
                                       </tr>
 							      </table>
 							  </td>
@@ -799,30 +824,30 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                       <tr>
                                           <td class="auto-style5">
 
-                                              <input name="q55" type="checkbox" value="1" /> A.略读，快速浏览和扫读</td>
+                                              <input name="q12" type="checkbox" value="1" /> A.略读，快速浏览和扫读</td>
                                           <td class="auto-style5">
 
-                                              <input name="q56" type="checkbox" value="2" /> B.有目的性选择阅读</td>
+                                              <input name="q12" type="checkbox" value="2" /> B.有目的性选择阅读</td>
                                           <td class="auto-style5">
 
-                                              <input name="q57" type="checkbox" value="4" /> C.任意跳跃式阅读</td>
+                                              <input name="q12" type="checkbox" value="4" /> C.任意跳跃式阅读</td>
                                           <td class="auto-style2">
 
-                                              <input name="q58" type="checkbox" value="8" /> D.重点阅读某个部分</td>
+                                              <input name="q12" type="checkbox" value="8" /> D.重点阅读某个部分</td>
                                       </tr>
                                       <tr>
                                           <td class="auto-style5">
 
-                                              <input name="q59" type="checkbox" value="16" /> E.认真研读，深度阅读</td>
+                                              <input name="q12" type="checkbox" value="16" /> E.认真研读，深度阅读</td>
                                           <td class="auto-style5">
 
-                                              <input name="q60" type="checkbox" value="32" /> F.一次性延续地阅读同主题或者相关主题的内容</td>
+                                              <input name="q12" type="checkbox" value="32" /> F.一次性延续地阅读同主题或者相关主题的内容</td>
                                           <td class="auto-style5">
 
-                                              <input name="q61" type="checkbox" value="64" /> G.没有什么变化</td>
+                                              <input name="q12" type="checkbox" value="64" /> G.没有什么变化</td>
                                           <td class="auto-style2">
 
-                                              <input name="q62" type="checkbox" value="128" /> H.其他</td>
+                                              <input name="q12" type="checkbox" value="128" /> H.其他</td>
                                       </tr>
 							      </table>
 
@@ -843,19 +868,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                       <tr>
                                           <td class="auto-style5">
 
-                                              <input name="q63" type="checkbox" value="1" /> A.方便快捷，来源广泛</td>
+                                              <input name="q13" type="checkbox" value="1" /> A.方便快捷，来源广泛</td>
                                           <td class="auto-style5">
 
-                                              <input name="q64" type="checkbox" value="2" /> B.便宜，更快更多地阅读</td>
+                                              <input name="q13" type="checkbox" value="2" /> B.便宜，更快更多地阅读</td>
                                           <td class="auto-style5">
 
-                                              <input name="q65" type="checkbox" value="4" /> C.内容丰富</td>
+                                              <input name="q13" type="checkbox" value="4" /> C.内容丰富</td>
                                           <td class="auto-style5">
 
-                                              <input name="q66" type="checkbox" value="8" /> D.阅读软件设计人性合理</td>
+                                              <input name="q13" type="checkbox" value="8" /> D.阅读软件设计人性合理</td>
                                           <td class="auto-style5">
 
-                                              <input name="q67" type="checkbox" value="16" /> E.其他</td>
+                                              <input name="q13" type="checkbox" value="16" /> E.其他</td>
                                       </tr>
 							      </table>
 							    </td>
@@ -875,19 +900,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                       <tr>
                                           <td class="auto-style5">
 
-                                              <input name="q68" type="checkbox" value="1" /> A.不利于深入阅读</td>
+                                              <input name="q14" type="checkbox" value="1" /> A.不利于深入阅读</td>
                                           <td class="auto-style5">
 
-                                              <input name="q69" type="checkbox" value="2" /> B.伤神伤眼</td>
+                                              <input name="q14" type="checkbox" value="2" /> B.伤神伤眼</td>
                                           <td class="auto-style5">
 
-                                              <input name="q70" type="checkbox" value="4" /> C.缺乏系统性与整体性</td>
+                                              <input name="q14" type="checkbox" value="4" /> C.缺乏系统性与整体性</td>
                                           <td class="auto-style5">
 
-                                              <input name="q71" type="checkbox" value="8" /> D.无关内容打扰</td>
+                                              <input name="q14" type="checkbox" value="8" /> D.无关内容打扰</td>
                                           <td class="auto-style5">
 
-                                              <input name="q72" type="checkbox" value="16" /> E.其他</td>
+                                              <input name="q14" type="checkbox" value="16" /> E.其他</td>
                                       </tr>
 							      </table>
 							    </td>
@@ -966,11 +991,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							      <table class="auto-style3">
                                       <tr>
                                           <td class="auto-style5">
-
-                                              <div class="input-append">
-                                                  <input class="span2" name="q73" placeholder="1~100" type="text" /> <span class="add-on">%</span>
-                                              </div>
-
+                                              
+                                          <div class="form-group">
+                                              <input placeholder="1~100，不用填写%" class="form-control" type="text" name="q17"/>
+                                          </div>
                                           </td>
                                           <td class="auto-style5">
 
@@ -1162,8 +1186,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							      <table class="auto-style3">
                                       <tr>
                                           <td class="auto-style1">
+                                              
+                                          <div class="form-group">
+                                              <input placeholder="填写方法" class="form-control" type="text" name="q23"/>
+                                          </div>
 
-                                              <input class="input-xlarge" name="q74" placeholder="方法" type="text" value="" /></td>
+                                          </td>
                                           <td class="auto-style5">
 
                                           </td>
@@ -1488,13 +1516,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                       <tr>
                                           <td class="auto-style5">
 
-                                              <input name="q75" type="checkbox" value="1" /> A.点名后回寝室</td>
+                                              <input name="q34" type="checkbox" value="1" /> A.点名后回寝室</td>
                                           <td class="auto-style5">
 
-                                              <input name="q76" type="checkbox" value="2" /> B.和同学聊天</td>
+                                              <input name="q34" type="checkbox" value="2" /> B.和同学聊天</td>
                                           <td class="auto-style5">
 
-                                              <input name="q77" type="checkbox" value="4" /> C.睡觉</td>
+                                              <input name="q34" type="checkbox" value="4" /> C.睡觉</td>
                                           <td class="auto-style2">
 
                                           </td>
@@ -1502,10 +1530,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                       <tr>
                                           <td class="auto-style5">
 
-                                              <input name="q78" type="checkbox" value="8" /> D.刷手机，看课外书</td>
+                                              <input name="q34" type="checkbox" value="8" /> D.刷手机，看课外书</td>
                                           <td class="auto-style5">
 
-                                              <input name="q79" type="checkbox" value="16" /> E.完成其他作业</td>
+                                              <input name="q34" type="checkbox" value="16" /> E.完成其他作业</td>
                                           <td class="auto-style5">
 
                                               &nbsp;</td>
@@ -1543,12 +1571,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                               <input name="q35" type="radio" value="8" /> D.无所谓，但大量记忆的模式还是不适合我</td>
                                       </tr>
                                       <tr>
-                                          <td colspan="4">
-                                          <table>
-                                              <td>
+                                          <td>
               <asp:Button class="btn btn-success" ID="submit" runat="server" Text="提交" OnClick="submit_Click" />
-                                              </td>
-                                          </table>
                                               </td>
                                       </tr>
 							      </table>
