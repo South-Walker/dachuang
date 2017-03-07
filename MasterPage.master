@@ -1,9 +1,13 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
 
-<!DOCTYPE HTML>
-<html>
-<head>
-<title></title>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Easy Admin Panel Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -20,32 +24,41 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link rel="stylesheet" href="bootstrap/css/icon-font.min.css" type='text/css' />
 <!-- //lined-icons -->
 <!-- chart -->
-<script src="js/Chart.js"></script>
+<script src="bootstrap/js/Chart.js"></script>
 <!-- //chart -->
 <!--animate-->
 <link href="bootstrap/css/animate.css" rel="stylesheet" type="text/css" media="all">
-<script src="js/wow.min.js"></script>
+<script src="bootstrap/js/wow.min.js"></script>
 	<script>
 		 new WOW().init();
 	</script>
 <!--//end-animate-->
  <!-- Meters graphs -->
-<script src="js/jquery-1.10.2.min.js"></script>
+<script src="bootstrap/js/jquery-1.10.2.min.js"></script>
 <!-- Placed js at the end of the document so the pages load faster -->
 
-</head> 
-   
- <body class="sticky-header left-side-collapsed">
+    <style type="text/css">
+        .page-wrapper{ 
+            font-size:1px;
+        }
+        .auto-style1 {
+            width: 284px;
+        }
+    </style>
+
+</head>
+    
+ <body class="sticky-header left-side-collapsed"  onload="initMap()">
     <section>
     <!-- left side start-->
 		<div class="left-side sticky-left-side">
 
 			<!--logo and iconic logo start-->
 			<div class="logo">
-				<h1><a href="index.html">Easy <span>Admin</span></a></h1>
+				<h1><a href="Default.aspx">返回 <span>首页</span></a></h1>
 			</div>
 			<div class="logo-icon text-center">
-				<a href="index.html"><i class="lnr lnr-home"></i> </a>
+				<a href="Default.aspx"><i class="lnr lnr-home"></i> </a>
 			</div>
 
 			<!--logo and iconic logo end-->
@@ -53,7 +66,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 				<!--sidebar nav start-->
 					<ul class="nav nav-pills nav-stacked custom-nav">
-						<li><a href="index.html"><i class="lnr lnr-power-switch"></i><span>Dashboard</span></a></li>
+						<li class="active"><a href="Default.aspx"><i class="lnr lnr-power-switch"></i><span>Dashboard</span></a></li>
 						<li class="menu-list">
 							<a href="#"><i class="lnr lnr-cog"></i>
 								<span>Components</span></a>
@@ -63,13 +76,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</ul>
 						</li>
 						<li><a href="forms.html"><i class="lnr lnr-spell-check"></i> <span>Forms</span></a></li>
-						<li><a href="tables.html"><i class="lnr lnr-menu"></i> <span>Tables</span></a></li>              
+						<li><a href="Table.aspx"><i class="lnr lnr-menu"></i> <span>查看问卷</span></a></li>              
 						<li class="menu-list"><a href="#"><i class="lnr lnr-envelope"></i> <span>MailBox</span></a>
 							<ul class="sub-menu-list">
 								<li><a href="inbox.html">Inbox</a> </li>
 								<li><a href="compose-mail.html">Compose Mail</a></li>
 							</ul>
-						</li>  
+						</li>      
 						<li class="menu-list"><a href="#"><i class="lnr lnr-indent-increase"></i> <span>Menu Levels</span></a>  
 							<ul class="sub-menu-list">
 								<li><a href="charts.html">Basic Charts</a> </li>
@@ -77,7 +90,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</li>
 						<li><a href="codes.html"><i class="lnr lnr-pencil"></i> <span>Typography</span></a></li>
 						<li><a href="media.html"><i class="lnr lnr-select"></i> <span>Media Css</span></a></li>
-						<li class="menu-list act"><a href="#"><i class="lnr lnr-book"></i>  <span>Pages</span></a> 
+						<li class="menu-list"><a href="#"><i class="lnr lnr-book"></i>  <span>Pages</span></a> 
 							<ul class="sub-menu-list">
 								<li><a href="sign-in.html">Sign In</a> </li>
 								<li><a href="sign-up.html">Sign Up</a></li>
@@ -88,10 +101,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<!--sidebar nav end-->
 			</div>
 		</div>
-    <!-- left side end-->
-    
+		<!-- left side end-->
     <!-- main content start-->
-		<div class="main-content main-content2 main-content2copy">
+		<div class="main-content main-content4">
 			<!-- header-starts -->
 			<div class="header-section">
 			 
@@ -263,7 +275,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<div class="profile_img">	
 										<span style="background:url(images/1.jpg) no-repeat center"> </span> 
 										 <div class="user-name">
-											<p>Michael<span>Administrator</span></p>
+											<p>Leon Xiao<span>Administrator</span></p>
 										 </div>
 										 <i class="lnr lnr-chevron-down"></i>
 										 <i class="lnr lnr-chevron-up"></i>
@@ -290,7 +302,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<a href="#"><i class="fa fa-twitter i1"></i><span>500<sup>+</sup> Tweets</span></a>
 						</div>
 						<div class="clearfix"> </div>
-					</div>			             	
+					</div>		             	
 					<div class="clearfix"></div>
 				</div>
 			</div>
@@ -298,8 +310,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 	<!-- //header-ends -->
 			<div id="page-wrapper">
-			</div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolderForMain" runat="server">
+        
+        </asp:ContentPlaceHolder>			</div>
 		</div>
+		<!--footer section start-->
+			<footer>
+			   <p>本站源码请访问本人<a href="https://github.com/South-Walker" target="_blank" title="my_github">github@South-Walker</a>
+</p>
+			</footer>
 	</section>
 	
 <script src="js/jquery.nicescroll.js"></script>

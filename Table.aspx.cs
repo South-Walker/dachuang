@@ -5,7 +5,7 @@ using System.Data;
 using System.Data.Linq;
 using System.Data.SqlClient;
 
-public partial class tables2 : System.Web.UI.Page
+public partial class Table : System.Web.UI.Page
 {
     string[] allanswer = new string[39];
     protected void Page_Load(object sender, EventArgs e)
