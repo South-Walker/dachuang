@@ -100,7 +100,8 @@ public partial class Select : System.Web.UI.Page
         {
             SolidBrush barbrush = new SolidBrush(Color.Blue);
             g.FillRectangle(barbrush, x2, 340 - 260 * ((float)checknum[i] / (float)sum), 20, 260 * ((float)checknum[i] / (float)sum));
-            g.DrawString(checknum[i].ToString(), font1, Brushes.Black, x2, 320 - 260 * ((float)checknum[i] / (float)sum));
+            g.DrawString(checknum[i].ToString(), font1, Brushes.Black, x2 - 4, 320 - 260 * ((float)checknum[i] / (float)sum));
+            g.DrawString(decimal.Round(decimal.Parse(((float)checknum[i] / (float)sum).ToString()), 3).ToString(), font1, Brushes.Black, x2, 300 - 260 * ((float)checknum[i] / (float)sum));
             x2 += 40;
         }
         image.Save(Server.MapPath("~/images/graph.jpeg"), ImageFormat.Jpeg);

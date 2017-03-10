@@ -1035,11 +1035,11 @@
                                             <tr>
                                                 <td class="auto-style5">
                                                     <label>
-                                                        <input name="q22" type="radio" value="11" />
+                                                        <input name="q22" type="radio" value="16" />
                                                         E.10小时以上</label></td>
                                                 <td class="auto-style5">
                                                     <label>
-                                                        <input name="q22" type="radio" value="3" />
+                                                        <input name="q22" type="radio" value="32" />
                                                         F.越多越好</label></td>
                                                 <td class="auto-style5"></td>
                                                 <td class="auto-style2"></td>
