@@ -12,7 +12,7 @@
 					<div class="panel-heading">
 						 <a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-888017" href="#panel-element-413951">请选择要查询的题号：</a>
 					</div>
-					<div id="panel-element-413951" class="panel-collapse collapse">
+					<div id="panel-element-645061" class="panel-collapse in">
 						<div class="panel-body">
                             <input placeholder="填写题号" class="form-control" type="text" name="queID" />
 						</div>
@@ -22,7 +22,7 @@
 					<div class="panel-heading">
 						 <a class="panel-title" data-toggle="collapse" data-parent="#panel-888017" href="#panel-element-645061">Collapsible Group Item #2</a>
 					</div>
-					<div id="panel-element-645061" class="panel-collapse in">
+					<div id="panel-element-413951" class="panel-collapse collapse">
 						<div class="panel-body">
 							<label>
                             <input name="q35" type="radio" value="8"/> D.无所谓，但大量记忆的模式还是不适合我<br />
