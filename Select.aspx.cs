@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections;
 using System.Linq;
 using System.Linq.Expressions;
@@ -6,9 +7,13 @@ using System.Data;
 using System.Data.Linq;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Drawing.Text;
+using System.Drawing.Imaging;
 
 public partial class Select : System.Web.UI.Page
 {
+    static int sum = 0;
     protected void Page_Load(object sender, EventArgs e)
     {
 
@@ -21,10 +26,84 @@ public partial class Select : System.Web.UI.Page
         {
             Stack all = Query(queID);
             int[]checknum = toRatio(all); //10=a,9=b,8=c...
-            PrintForTest(checknum);
+            int graphtype = Convert.ToInt32(Request.Form["graphtype"]);
+            Drawer(checknum, graphtype);
         }
         else
             Response.Write("<script>alert('您的输入不正确,请输入正确的题号!');</script>");
+    }
+    public void Drawer(int[]checknum,int graphtype)
+    {
+        if(graphtype == 1)
+        {
+            //画饼
+            DrawPieGraph(checknum);
+        }
+        else if(graphtype == 2)
+        {
+            //画柱
+            DrawBarGraph(checknum);
+        }
+        else
+        {
+            //再说
+        }
+        Response.Redirect("Select.aspx");
+    }
+    public void DrawPieGraph(int[] checknum)
+    {
+
+    }
+    public void DrawBarGraph(int[] checknum)
+    {
+        Bitmap image = new Bitmap(700, 400);
+        Graphics g = Graphics.FromImage(image);
+        g.Clear(Color.White);
+        Font font1 = new Font("Arial", 9, FontStyle.Regular);
+        Font font2 = new Font("宋体", 20, FontStyle.Bold);
+        LinearGradientBrush brush = new LinearGradientBrush(new Rectangle(0, 0, image.Width, image.Height), Color.Blue, Color.BlueViolet, 1.2f, true);
+        g.FillRectangle(Brushes.WhiteSmoke, 0, 0, image.Width, image.Height);
+        g.DrawString("第" + Request.Form["queID"] + "题问卷填写情况图", font2, brush, new PointF(130, 30));
+        g.DrawRectangle(new Pen(Color.Blue), 0, 0, image.Width - 1, image.Height - 1);
+        Pen mypen = new Pen(brush, 1);
+        int x = 100;
+        for (int i = 0; i <= 10; i++)
+        {
+            g.DrawLine(mypen, x, 80, x, 340);
+            x += 40;
+        }
+        Pen mypen2 = new Pen(Color.Blue, 2);
+        g.DrawLine(mypen2, x - 480, 80, x - 480, 340);
+        int y = 106;
+        for (int i = 0; i < 9; i++)
+        {
+            g.DrawLine(mypen, 60, y, 540, y);
+            y += 26;
+        }
+        g.DrawLine(mypen2, 60, y, 540, y);
+        //以上为画表格
+        string[] x_letter = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K" };
+        string[] y_percent = { "100%", "90%", "80%", "70%", "60%", "50%", "40%", "30%", "20%", "10%", "0%" };
+        int x1 = 82;int y1 = 65;
+        for (int i = 0; i < 11; i++)
+        {
+            g.DrawString(x_letter[i], font1, Brushes.Black, x1, 348);
+            x1 += 40;
+        }
+        for (int i = 0; i < 11; i++)
+        {
+            g.DrawString(y_percent[i].ToString(), font1, Brushes.Black, 25, y1);
+            y1 += 26;
+        }
+        int x2 = 80;
+        for (int i = 10; i >= 0; i--) 
+        {
+            SolidBrush barbrush = new SolidBrush(Color.Blue);
+            g.FillRectangle(barbrush, x2, 340 - 260 * ((float)checknum[i] / (float)sum), 20, 260 * ((float)checknum[i] / (float)sum));
+            g.DrawString(checknum[i].ToString(), font1, Brushes.Black, x2, 320 - 260 * ((float)checknum[i] / (float)sum));
+            x2 += 40;
+        }
+        image.Save(Server.MapPath("~/images/graph.jpeg"), ImageFormat.Jpeg);
     }
     public bool CheckInput(string queid)
     {
@@ -42,7 +121,7 @@ public partial class Select : System.Web.UI.Page
     }
     public void PrintForTest(int[]checknum)
     {
-        string[] letter = { "L", "J", "I", "H", "G", "F", "E", "D", "C", "B", "A" };
+        string[] letter = { "K", "J", "I", "H", "G", "F", "E", "D", "C", "B", "A" };
         string begin = "<script>alert('";
         for (int i = 10; i >= 0; i--)
         {
@@ -69,6 +148,14 @@ public partial class Select : System.Web.UI.Page
         }
         return Checks;
     }
+    static public void Getsum(int[]check)
+    {
+        sum = 0;
+        foreach (int i in check)
+        {
+            sum += i;
+        }
+    }
     public int[] toRatio(Stack all)
     {
         int[] result = new int[11];
@@ -88,6 +175,7 @@ public partial class Select : System.Web.UI.Page
                 now_bi++;
             }
         }
+        Getsum(result);
         return result;
     }
     public static SqlConnection Signin()
