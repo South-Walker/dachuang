@@ -75,7 +75,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<li><a href="widgets.html">Widgets</a></li>
 								</ul>
 						</li>
-						<li><a href="forms.html"><i class="lnr lnr-spell-check"></i> <span>Forms</span></a></li>
+						<li><a href="Select.aspx"><i class="lnr lnr-spell-check"></i> <span>数据查询</span></a>
+							<ul class="sub-menu-list">
+								<li><a href="Select.aspx">单项查询</a> </li>
+								<li><a href="ComplexSelect.aspx">组合查询</a></li>
+							</ul>
+						</li>
 						<li><a href="Table.aspx"><i class="lnr lnr-menu"></i> <span>查看问卷</span></a></li>              
 						<li class="menu-list"><a href="#"><i class="lnr lnr-envelope"></i> <span>MailBox</span></a>
 							<ul class="sub-menu-list">

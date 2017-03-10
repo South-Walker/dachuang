@@ -261,7 +261,7 @@
 
 
                                                     <label>
-                                                        <input name="q3" type="checkbox" value="64" />
+                                                        <input name="q3" type="checkbox" value="64"/>
                                                         G.听音乐，看视频
                                                     </label>
                                                 </td>
@@ -1474,7 +1474,7 @@
                                                     <table>
                                                         <tr>
                                                             <td>
-                                                                <asp:Button class="btn btn-success" ID="submit" runat="server" Text="提交" OnClick="submit_Click" />
+                                                                <asp:Button class="btn btn-success" ID="submit" runat="server" Text="提交" OnClick="submit_Click"  height="40px" />
                                                             </td>
                                                         </tr>
                                                     </table>
