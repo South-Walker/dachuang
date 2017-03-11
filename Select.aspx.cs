@@ -22,15 +22,18 @@ public partial class Select : System.Web.UI.Page
     protected void Select_Click(object sender, EventArgs e)
     {
         string queID = Request.Form["queID"];
-        if (CheckInput(queID)) 
+        if (CheckInput(queID))
         {
             Stack all = Query(queID);
-            int[]checknum = toRatio(all); //10=a,9=b,8=c...
+            int[] checknum = toRatio(all); //10=a,9=b,8=c...
             int graphtype = Convert.ToInt32(Request.Form["graphtype"]);
             Drawer(checknum, graphtype);
+            Response.Write("<script>alert('图表已制作成功，如果没有显示，请刷新您的浏览器。');</script>");
         }
         else
+        {
             Response.Write("<script>alert('您的输入不正确,请输入正确的题号!');</script>");
+        }
     }
     public void Drawer(int[]checknum,int graphtype)
     {
@@ -48,7 +51,7 @@ public partial class Select : System.Web.UI.Page
         {
             //再说
         }
-        Response.Redirect("Select.aspx");
+
     }
     public void DrawPieGraph(int[] checknum)
     {
@@ -101,7 +104,7 @@ public partial class Select : System.Web.UI.Page
             SolidBrush barbrush = new SolidBrush(Color.Blue);
             g.FillRectangle(barbrush, x2, 340 - 260 * ((float)checknum[i] / (float)sum), 20, 260 * ((float)checknum[i] / (float)sum));
             g.DrawString(checknum[i].ToString(), font1, Brushes.Black, x2 - 4, 320 - 260 * ((float)checknum[i] / (float)sum));
-            g.DrawString(decimal.Round(decimal.Parse(((float)checknum[i] / (float)sum).ToString()), 3).ToString(), font1, Brushes.Black, x2, 300 - 260 * ((float)checknum[i] / (float)sum));
+            g.DrawString(decimal.Round(decimal.Parse(((float)checknum[i] / (float)sum).ToString()), 3).ToString(), font1, Brushes.Black, x2 - 4, 300 - 260 * ((float)checknum[i] / (float)sum));
             x2 += 40;
         }
         image.Save(Server.MapPath("~/images/graph.jpeg"), ImageFormat.Jpeg);
@@ -169,7 +172,7 @@ public partial class Select : System.Web.UI.Page
             {
                 if (value >= now_que)
                 {
-                    value = value - 1024;
+                    value = value - now_que;
                     result[now_bi]++;
                 }
                 now_que = now_que / 2;
@@ -184,4 +187,9 @@ public partial class Select : System.Web.UI.Page
         string Sqlst = "Server=bds240792229.my3w.com;User Id=bds240792229;Pwd=961016728;Database=bds240792229_db";
         return new SqlConnection(Sqlst);
     }//封装远程数据库账号密码，返回连接对象
+
+    protected void Save_Click(object sender, EventArgs e)
+    {
+
+    }
 }

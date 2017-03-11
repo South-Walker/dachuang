@@ -1,6 +1,19 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Select.aspx.cs" Inherits="Select" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+    <style type="text/css">
+        .auto-style2 {
+            width: 176px;
+        }
+
+        .auto-style4 {
+            width: 59px;
+        }
+
+        .auto-style5 {
+            width: 58px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderForMain" runat="Server">
     <form id="form1" runat="server">
@@ -39,11 +52,16 @@
                             </div>
                         </div>
                     </div>
-
-                    <asp:Button ID="SelectB" class="btn btn-success" runat="server" OnClick="Select_Click" Text="生成表格" Height="35" />
-                </div>
+                    <div class="col-md-1 column">
+                        <asp:button id="SelectB" class="btn btn-success" runat="server" onclick="Select_Click" text="生成表格" height="35" />
+                    </div>
+                    
+                <div class="col-md-2 column"></div>
+                    <div class="col-md-1 column">
+                        <asp:button id="ButtonS" class="btn btn-success" runat="server" onclick="Save_Click" text="保存表格" height="35" />
+                    </div></div>
                 <div class="col-md-8 column">
-                    <img src="/images/graph.jpeg"/> 
+                    <img src="/images/graph.jpeg" />
                 </div>
             </div>
         </div>

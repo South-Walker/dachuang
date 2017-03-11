@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class ComplexSelect_aspx : System.Web.UI.Page
+public partial class ComplexSelect : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
