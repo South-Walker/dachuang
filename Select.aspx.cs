@@ -24,15 +24,19 @@ public partial class Select : System.Web.UI.Page
         string queID = Request.Form["queID"];
         if (CheckInput(queID))
         {
+            int graphtype = Convert.ToInt32(Request.Form["graphtype"]);
+            if (graphtype != 2)
+            {
+                LabelWarning.Text = "他还不会这个！";
+            }
             Stack all = Query(queID);
             int[] checknum = toRatio(all); //10=a,9=b,8=c...
-            int graphtype = Convert.ToInt32(Request.Form["graphtype"]);
             Drawer(checknum, graphtype);
-            Response.Write("<script>alert('图表已制作成功，如果没有显示，请刷新您的浏览器。');</script>");
+            ImageShower.ImageUrl = "images/graph.jpeg";
         }
         else
         {
-            Response.Write("<script>alert('您的输入不正确,请输入正确的题号!');</script>");
+            LabelWarning.Text = "请输入正确的题号";
         }
     }
     public void Drawer(int[]checknum,int graphtype)
@@ -40,7 +44,8 @@ public partial class Select : System.Web.UI.Page
         if(graphtype == 1)
         {
             //画饼
-            DrawPieGraph(checknum);
+           // DrawPieGraph(checknum);
+
         }
         else if(graphtype == 2)
         {
@@ -59,7 +64,7 @@ public partial class Select : System.Web.UI.Page
     }
     public void DrawBarGraph(int[] checknum)
     {
-        Bitmap image = new Bitmap(700, 400);
+        Bitmap image = new Bitmap(600, 400);
         Graphics g = Graphics.FromImage(image);
         g.Clear(Color.White);
         Font font1 = new Font("Arial", 9, FontStyle.Regular);
@@ -108,6 +113,7 @@ public partial class Select : System.Web.UI.Page
             x2 += 40;
         }
         image.Save(Server.MapPath("~/images/graph.jpeg"), ImageFormat.Jpeg);
+        LabelWarning.Text = "如果没有显示成功，请刷新您的浏览器！";
     }
     public bool CheckInput(string queid)
     {
@@ -190,6 +196,6 @@ public partial class Select : System.Web.UI.Page
 
     protected void Save_Click(object sender, EventArgs e)
     {
-
+        LabelWarning.Text = "他还不会这个";
     }
 }
