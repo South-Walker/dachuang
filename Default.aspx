@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="title" Runat="Server">问卷管理及数据分析后台
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderForMain" Runat="Server">
     
@@ -10,9 +10,9 @@
 							<div class="r3_counter_box">
 								<i class="fa fa-mail-forward"></i>
 								<div class="stats">
-								  <h5>45 <span>%</span></h5>
+								  <h5>4 <span>人</span></h5>
 								  <div class="grow">
-									<p>Growth</p>
+									<p>小组成员</p>
 								  </div>
 								</div>
 							</div>
@@ -21,9 +21,9 @@
 							<div class="r3_counter_box">
 								<i class="fa fa-users"></i>
 								<div class="stats">
-								  <h5>50 <span>%</span></h5>
+								  <h5>501 <span>份</span></h5>
 								  <div class="grow grow1">
-									<p>New Users</p>
+									<p>有效问卷</p>
 								  </div>
 								</div>
 							</div>
@@ -32,9 +32,9 @@
 							<div class="r3_counter_box">
 								<i class="fa fa-eye"></i>
 								<div class="stats">
-								  <h5>70 <span>%</span></h5>
+								  <h5>60 <span>%</span></h5>
 								  <div class="grow grow3">
-									<p>Visitors</p>
+									<p>网站已建设</p>
 								  </div>
 								</div>
 							</div>
@@ -45,7 +45,7 @@
 								<div class="stats">
 								  <h5>70 <span>%</span></h5>
 								  <div class="grow grow2">
-									<p>Profit</p>
+									<p>项目总进度</p>
 								  </div>
 								</div>
 							</div>
@@ -375,7 +375,7 @@
 					</div>
 					<form>
 						<input type="text" value="Enter your text" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Enter your text';}" required="">
-						<input type="submit" value="Submit" required=""/>		
+						<input type="submit" value="Submit" required="" />		
 					</form>
 				</div>
 				<div class="clearfix"> </div>
