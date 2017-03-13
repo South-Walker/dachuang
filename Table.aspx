@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Table.aspx.cs" Inherits="Table" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="title" Runat="Server">查看问卷
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderForMain" Runat="Server">
     
@@ -1165,14 +1165,12 @@
                                         </table>
                                     </td>
                                 </tr>
-
                                 <tr class="success">
                                     <th scope="row">27</th>
                                     <td>哪些课程与课外阅读关系密切</td>
                                     <td></td>
                                     <td></td>
                                 </tr>
-
                                 <tr>
                                     <th scope="row"></th>
                                     <td>
@@ -1194,13 +1192,13 @@
                                                 <td class="auto-style2">
                                                     <label>
                                                         <input name="q27" type="radio" value="8" />
-                                                        D.其他</label></td>
+                                                        D.其他
+                                                    </label>
+                                                </td>
                                             </tr>
                                         </table>
-
                                     </td>
                                 </tr>
-
                                 <tr class="info">
                                     <th scope="row">28</th>
                                     <td>课外阅读对思想政治课课堂教学的影响</td>

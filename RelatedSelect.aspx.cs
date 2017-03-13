@@ -11,34 +11,126 @@ using System.Drawing.Drawing2D;
 using System.Drawing.Text;
 using System.Drawing.Imaging;
 
-public partial class ComplexSelect : System.Web.UI.Page
+
+public partial class RelatedSelect : System.Web.UI.Page
 {
-    static int sum = 0;
     protected void Page_Load(object sender, EventArgs e)
     {
 
     }
 
-    protected void CSelectB_Click(object sender, EventArgs e)
+    static int sum = 0;
+    protected void RSelectB_Click(object sender, EventArgs e)
     {
         string queID = Request.Form["queID"];
-        string grade = Request.Form["grade"];
-        string sex = Request.Form["sex"];
-        string wenorli = Request.Form["major"];
-        if (CheckInput(queID))
+        string related = Request.Form["relatedbox"];
+        string relatedqueID = Request.Form["relatedqueID"];
+        if (CheckInput(queID) && related != "" && CheckInput(relatedqueID)) 
         {
-            Stack all = Query(queID, sex, grade, wenorli);
-            int[] checknum = toRatio(all);
+            bool[] relatedarray = CheckCheckbox(related);
+            Stack all = Query(queID, relatedqueID, relatedarray);
+            int[] checknum = toRatio(all); //10=a,9=b,8=c...
             DrawBarGraph(checknum);
-            ImageShower.ImageUrl = "images/complexgraph.jpeg";
-
+            ImageShower.ImageUrl = "images/graph.jpeg";
         }
         else
+            LabelWarning.Text = "您的输入有误!";
+    }
+    public bool[] CheckCheckbox(string related)
+    {
+        bool[] result = new bool[11];
+        string[] answer = related.Split(',');
+        foreach(string st in answer)
         {
-            LabelWarning.Text = "请输入正确的题号";
+            result[Convert.ToInt32(st)] = true;
+        } 
+        return result;
+    }
+    public Stack Query(string queID, string relatedqueID, bool[] relatedarray)
+    {
+        SqlConnection sqlc = Signin();
+        Stack Checks = new Stack();
+        string id = "q" + queID;
+        string relatedid = "q" + relatedqueID;
+        sqlc.Open();
+        string command = "select " + id + "," + relatedid + " from dachuang";
+        SqlCommand sqlcom = new SqlCommand(command, sqlc);
+        SqlDataAdapter sqldata = new SqlDataAdapter(sqlcom);
+        DataSet sqlds = new DataSet();
+        sqldata.Fill(sqlds);
+        sqlc.Close();
+        bool[] value;
+        foreach (DataRow i in sqlds.Tables[0].Rows)
+        {
+            value = new bool[11];
+            value = TranAnswer(i.ItemArray[1]);
+            bool is_using = true;
+            for (int k = 10; k >= 0; k--) 
+            {
+                if (relatedarray[k])
+                {
+                    if (!value[k])
+                    {
+                        is_using = false;
+                        break;
+                    }
+                }
+            }
+            if (is_using)
+                Checks.Push(i.ItemArray[0]);
+        }
+        return Checks;
+    }
+
+    static public void Getsum(int[] check)
+    {
+        sum = 0;
+        foreach (int i in check)
+        {
+            sum += i;
         }
     }
-    public void DrawBarGraph(int[] checknum)
+    static public bool[] TranAnswer(object i)
+    {
+        bool[] result = new bool[11];
+        int value = Convert.ToInt32(i);
+        int now_bi = 0;
+        int now_que = 1024;
+        while (value > 0)
+        {
+            if (value >= now_que)
+            {
+                value = value - now_que;
+                result[now_bi] = true;
+            }
+            now_que = now_que / 2;
+            now_bi++;
+        }
+        return result;
+    }
+    public int[] toRatio(Stack all)
+    {
+        int[] result = new int[11];
+        foreach (object i in all)
+        {
+            int value = Convert.ToInt32(i);
+            int now_bi = 0;
+            int now_que = 1024;
+            while (value > 0)
+            {
+                if (value >= now_que)
+                {
+                    value = value - now_que;
+                    result[now_bi]++;
+                }
+                now_que = now_que / 2;
+                now_bi++;
+            }
+        }
+        Getsum(result);
+        return result;
+    }
+    public void DrawBarGraph(int[] checknum)//checknum[10]对应A
     {
         Bitmap image = new Bitmap(600, 400);
         Graphics g = Graphics.FromImage(image);
@@ -82,15 +174,17 @@ public partial class ComplexSelect : System.Web.UI.Page
         int x2 = 80;
         for (int i = 10; i >= 0; i--)
         {
+            if(sum == 0)
+            {
+                sum = 100;
+            }
             SolidBrush barbrush = new SolidBrush(Color.Blue);
-            if (sum == 0) { sum = 100; }
             g.FillRectangle(barbrush, x2, 340 - 260 * ((float)checknum[i] / (float)sum), 20, 260 * ((float)checknum[i] / (float)sum));
             g.DrawString(checknum[i].ToString(), font1, Brushes.Black, x2 - 4, 320 - 260 * ((float)checknum[i] / (float)sum));
             g.DrawString(decimal.Round(decimal.Parse(((float)checknum[i] / (float)sum).ToString()), 3).ToString(), font1, Brushes.Black, x2 - 4, 300 - 260 * ((float)checknum[i] / (float)sum));
-            
             x2 += 40;
         }
-        image.Save(Server.MapPath("~/images/complexgraph.jpeg"), ImageFormat.Jpeg);
+        image.Save(Server.MapPath("~/images/graph.jpeg"), ImageFormat.Jpeg);
         LabelWarning.Text = "如果没有显示成功，请刷新您的浏览器！";
     }
     public bool CheckInput(string queid)
@@ -107,80 +201,9 @@ public partial class ComplexSelect : System.Web.UI.Page
         }
         return false;
     }
-    public Stack Query(string queID, string sex, string grade, string wenorli)
-    {
-        SqlConnection sqlc = Signin();
-        Stack Checks = new Stack();
-        string command = ""; ;
-        string id = "q" + queID;
-        sqlc.Open();
-        string Stable;
-        if (wenorli == "文科")
-            Stable = "iswenke";
-        else if (wenorli == "理科")
-            Stable = "islike";
-        else
-            Stable = "dachuang";
-        command = "select " + id + " from " + Stable;
-        if (sex != grade)
-        {
-            command += " where ";
-            if (sex != "无所谓" && grade != "无所谓")
-                command += "sex = '" + sex + "'" + " and grade = '" + grade + "'";
-            else if (grade != "无所谓")
-                command += "grade = '" + grade + "'";
-            else if (sex != "无所谓")
-                command += "sex = '" + sex + "'";
-        }
-        string a = command;//断点用
-        SqlCommand sqlcom = new SqlCommand(command, sqlc);
-        SqlDataAdapter sqldata = new SqlDataAdapter(sqlcom);
-        DataSet sqlds = new DataSet();
-        sqldata.Fill(sqlds);
-        sqlc.Close();
-        foreach (DataRow i in sqlds.Tables[0].Rows)
-        {
-            Checks.Push(i.ItemArray[0]);
-        }
-        return Checks;
-    }
     public static SqlConnection Signin()
     {
         string Sqlst = "Server=bds240792229.my3w.com;User Id=bds240792229;Pwd=961016728;Database=bds240792229_db";
         return new SqlConnection(Sqlst);
     }//封装远程数据库账号密码，返回连接对象
-    public int[] toRatio(Stack all)
-    {
-        int[] result = new int[11];
-        foreach (object i in all)
-        {
-            int value = Convert.ToInt32(i);
-            int now_bi = 0;
-            int now_que = 1024;
-            while (value > 0)
-            {
-                if (value >= now_que)
-                {
-                    value = value - now_que;
-                    result[now_bi]++;
-                }
-                now_que = now_que / 2;
-                now_bi++;
-            }
-        }
-        Getsum(result);
-        return result;
-    }
-    static public void Getsum(int[] check)
-    {
-        sum = 0;
-        foreach (int i in check)
-        {
-            sum += i;
-        }
-    }
-    protected void CButtonS_Click(object sender, EventArgs e)
-    {
-
-    }
 }

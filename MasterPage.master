@@ -5,9 +5,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-    <asp:ContentPlaceHolder id="head" runat="server">
-    </asp:ContentPlaceHolder>
+    <title>
+    <asp:ContentPlaceHolder id="title" runat="server">
+    </asp:ContentPlaceHolder></title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Easy Admin Panel Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -79,6 +79,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<ul class="sub-menu-list">
 								<li><a href="Select.aspx">单项查询</a> </li>
 								<li><a href="ComplexSelect.aspx">组合查询</a></li>
+                                <li><a href="RelatedSelect.aspx">依赖查询</a></li>
 							</ul>
 						</li>
 						<li><a href="Table.aspx"><i class="lnr lnr-menu"></i> <span>查看问卷</span></a></li>              

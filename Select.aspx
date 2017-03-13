@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Select.aspx.cs" Inherits="Select" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="title" runat="Server">单项查询
     </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderForMain" runat="Server">
     <form id="form1" runat="server">
@@ -45,7 +45,6 @@
                     
                 <div class="col-md-2 column"></div>
                     <div class="col-md-1 column">
-                        <asp:button id="ButtonS" class="btn btn-success" runat="server" onclick="Save_Click" text="保存表格" height="35" />
                     </div></div>
                 <div class="col-md-8 column">
                     &nbsp;<asp:Image ID="ImageShower" runat="server" ImageUrl="images/graph.jpeg" />
