@@ -80,7 +80,7 @@
                     <div class="col-md-1 column">
                     </div></div>
                 <div class="col-md-8 column">
-                    &nbsp;<asp:Image ID="ImageShower" runat="server" ImageUrl="images/graph.jpeg" />
+                    &nbsp;<asp:Image ID="ImageShower" runat="server" ImageUrl="images/relatedgraph.jpeg" />
                     <br>
                     <asp:Label ID="LabelWarning" runat="server" ForeColor="Red" ></asp:Label>
                 </div>

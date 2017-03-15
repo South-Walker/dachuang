@@ -32,9 +32,6 @@
                                         <input name="graphtype" type="radio" value="2" />柱形图
                                     </label>
                                     <br />
-                                    <label>
-                                        <input name="graphtype" type="radio" value="3" />我还没想好
-                                    </label>
                                 </div>
                             </div>
                         </div>

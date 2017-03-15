@@ -35,7 +35,7 @@ public partial class Table : System.Web.UI.Page
 
     protected void submit_Click(object sender, EventArgs e)
     {
-
+        /*
         for (int i = -2; i <= 0; i++)
         {
             allanswer[i + 2] = Request.Form[Get_Input_Name(i)];
@@ -109,5 +109,7 @@ public partial class Table : System.Web.UI.Page
         lqdb.SubmitChanges();
         var q = lqdb.dachuang.Max(c => c.mainID);
         Response.Write("<script>alert('第" + q.ToString() + "张完成！');</script>");
+        */
+        Response.Write("<script>alert('问卷录入系统已关闭，如需录入问卷，请联系南行。');</script>");
     }
 }

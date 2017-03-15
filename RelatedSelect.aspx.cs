@@ -184,7 +184,7 @@ public partial class RelatedSelect : System.Web.UI.Page
             g.DrawString(decimal.Round(decimal.Parse(((float)checknum[i] / (float)sum).ToString()), 3).ToString(), font1, Brushes.Black, x2 - 4, 300 - 260 * ((float)checknum[i] / (float)sum));
             x2 += 40;
         }
-        image.Save(Server.MapPath("~/images/graph.jpeg"), ImageFormat.Jpeg);
+        image.Save(Server.MapPath("~/images/relatedgraph.jpeg"), ImageFormat.Jpeg);
         LabelWarning.Text = "如果没有显示成功，请刷新您的浏览器！";
     }
     public bool CheckInput(string queid)

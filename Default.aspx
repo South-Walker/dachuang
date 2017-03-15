@@ -43,7 +43,7 @@
 							<div class="r3_counter_box">
 								<i class="fa fa-usd"></i>
 								<div class="stats">
-								  <h5>70 <span>%</span></h5>
+								  <h5>55 <span>%</span></h5>
 								  <div class="grow grow2">
 									<p>项目总进度</p>
 								  </div>
@@ -52,7 +52,6 @@
 						</div>
 						<div class="clearfix"> </div>
 					</div>
-
 			<!-- switches -->
 		<div class="switches">
 			<div class="col-4">

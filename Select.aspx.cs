@@ -25,10 +25,6 @@ public partial class Select : System.Web.UI.Page
         if (CheckInput(queID))
         {
             int graphtype = Convert.ToInt32(Request.Form["graphtype"]);
-            if (graphtype != 2)
-            {
-                LabelWarning.Text = "他还不会这个！";
-            }
             Stack all = Query(queID);
             int[] checknum = toRatio(all); //10=a,9=b,8=c...
             Drawer(checknum, graphtype);
@@ -44,23 +40,60 @@ public partial class Select : System.Web.UI.Page
         if(graphtype == 1)
         {
             //画饼
-           // DrawPieGraph(checknum);
-
+            DrawPieGraph(checknum);
         }
         else if(graphtype == 2)
         {
             //画柱
             DrawBarGraph(checknum);
         }
-        else
-        {
-            //再说
-        }
-
     }
     public void DrawPieGraph(int[] checknum)
     {
-
+        Bitmap image = new Bitmap(600, 400);
+        Graphics g = Graphics.FromImage(image);
+        g.Clear(Color.White);
+        int sum = 0;
+        Font font1 = new Font("Arial", 9, FontStyle.Regular);
+        Font font2 = new Font("宋体", 20, FontStyle.Bold);
+        LinearGradientBrush brush = new LinearGradientBrush(new Rectangle(0, 0, image.Width, image.Height), Color.Blue, Color.BlueViolet, 1.2f, true);
+        g.FillRectangle(Brushes.WhiteSmoke, 0, 0, image.Width, image.Height);
+        g.DrawString("第" + Request.Form["queID"] + "题问卷填写情况图", font2, brush, new PointF(130, 30));
+        g.DrawRectangle(new Pen(Color.Blue), 0, 0, image.Width - 1, image.Height - 1);
+        Pen mypen = new Pen(brush, 1);
+        ArrayList colors = new ArrayList();
+        colors.Add(new SolidBrush(Color.FromArgb(77, 59, 98)));
+        colors.Add(new SolidBrush(Color.FromArgb(39, 106, 124)));
+        colors.Add(new SolidBrush(Color.FromArgb(79, 129, 189)));
+        colors.Add(new SolidBrush(Color.FromArgb(192, 80, 77)));
+        colors.Add(new SolidBrush(Color.FromArgb(155, 187, 89)));
+        colors.Add(new SolidBrush(Color.FromArgb(128, 100, 162)));
+        colors.Add(new SolidBrush(Color.FromArgb(75, 172, 198)));
+        colors.Add(new SolidBrush(Color.FromArgb(247, 150, 70)));
+        colors.Add(new SolidBrush(Color.FromArgb(44, 77, 117)));
+        colors.Add(new SolidBrush(Color.FromArgb(119, 44, 42)));
+        colors.Add(new SolidBrush(Color.FromArgb(95, 117, 48)));
+        foreach (int i in checknum)
+        {
+            sum += i;
+        }
+        float total = (float)sum;
+        float start = 0;
+        for (int i = 10; i >= 0; i--)
+        {
+            g.FillPie((SolidBrush)colors[i], new Rectangle(20, 85, 300, 300), start, (float)checknum[i] * 360 / total);
+            start += (float)checknum[i] * 360 / total;
+        }
+        string[] letter = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K" };
+        g.DrawRectangle(new Pen(Color.Black, 2), 390, 85, 200, 310);
+        for (int i = 10; i >= 0; i--)
+        {
+            g.FillRectangle((SolidBrush)colors[i], 405, 320 - 22 * i, 15, 15);
+            g.DrawString(letter[10 - i] + "选项——" + ((float)checknum[i] / total * 100).ToString("F2") + "%", new Font("宋体", 10, FontStyle.Bold), Brushes.Black, new Point(425, 320 - 22 * i));
+        }
+        g.DrawString("问卷中总有效答题人次：" + total.ToString(), new Font("宋体", 7, FontStyle.Bold), Brushes.Black, new Point(405, 350));
+        image.Save(Server.MapPath("~/images/graph.jpeg"), ImageFormat.Jpeg);
+        LabelWarning.Text = "如果没有显示成功，请刷新您的浏览器！";
     }
     public void DrawBarGraph(int[] checknum)
     {
