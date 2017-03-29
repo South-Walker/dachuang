@@ -31,7 +31,7 @@ public partial class RelatedSelect : System.Web.UI.Page
             Stack all = Query(queID, relatedqueID, relatedarray);
             int[] checknum = toRatio(all); //10=a,9=b,8=c...
             DrawBarGraph(checknum);
-            ImageShower.ImageUrl = "images/graph.jpeg";
+            ImageShower.ImageUrl = "images/relatedgraph.jpeg";
         }
         else
             LabelWarning.Text = "您的输入有误!";
